@@ -1,0 +1,81 @@
+Render Link:
+
+Project - ExpressJS API - Movie Catalog System
+
+> Target Users
+    - admin
+    - regular
+
+> Functionalities required
+
+    For Admin:
+        - CRUD operations for Admin functionality
+            - Authenticated admin user can add movies to catalog.
+            - Authenticated admin user can update existing movies from catalog.
+            - Authenticated admin user can delete a movie from catalog.
+
+    For All User:
+        - register and login
+        - Authenticated user can retrieve movies from catalog.
+        - Authenticated user can retrieve a single movie by id.
+        - Authenticated user can add comments to movies.
+        -Authenticated user can get comments from a movie.
+
+    Other
+        - Add appropriate error handling, HTTP status, response messages.
+        - no need to pass id in the request body. 
+
+> Application data to store and manage.
+
+    - User information
+        - email
+        - password
+        - isAdmin
+    -Movie
+        - title
+        - director
+        - year
+        - description
+        - genre
+        - comments
+
+> Technical Requirements
+
+    - Express.js API
+    - MongoDB with Mongoose for data storage and management.
+    - RESTful Architecture.
+
+> Security and Authentication Requirements
+    - Token-Based Authentication (JWT).
+    - Bcrypt hash
+
+> Routes and Controllers
+
+    Routes:
+
+    User
+        POST /users/login - User login route.
+        POST /users/register - User registration route.
+    Movies
+        POST /movies/addMovie - add a new movie
+        GET /movies/getMovies - retrieve all movies
+        GET /movies/getMovie/:id - retrieve specific movie by id
+        PATCH /movies/updateMovie/:id - update a movie by id
+        DELETE /movies/deleteMovie/:id - delete a movie by id
+        PATCH /addComment/:id - add comment to a movie
+        GET / getComments/:id - get all comments of specific movie by id
+    
+    Controllers:
+
+        User
+            -loginUser
+            -registerUser
+        Movies
+            -addMovie
+            -getAllMovies
+            -getMovieById
+            -updateMovie
+            -deleteMovie
+            -addMovieComment
+            -getMovieComments
+
